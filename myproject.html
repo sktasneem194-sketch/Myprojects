@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Document</title>
+
+<style>
+  body {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  button {
+    border-radius: 8px;
+    color: pink;
+    background: #222;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid purple;
+    box-shadow: 0 0 15px purple, 0 0 30px purple;
+    text-shadow: 0 0 8px #ff99ff;
+  }
+
+  button:hover {
+    box-shadow: 0 0 25px #b300ff, 0 0 40px #b300ff;
+  }
+
+  .line {
+    color: pink;
+    font-size: 22px;
+    margin-top: 10px;
+    text-shadow: 0 0 10px purple;
+    animation: fade 0.7s ease-in-out;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+</style>
+
+<script>
+let lines = [
+  "you are my everything",
+  "you are my world",
+  "you are my reason",
+  "you are my happiness",
+  "you are my heart"
+];
+
+let index = 0;
+
+function addText() {
+  if (index < lines.length) {
+    let div = document.createElement("div");
+    div.className = "line";
+    div.textContent = lines[index];
+    document.getElementById("output").appendChild(div);
+    index++;
+  }
+}
+</script>
+
+</head>
+<body>
+
+<button onclick="addText()">click me</button>
+<div id="output"></div>
+
+</body>
+</html>
